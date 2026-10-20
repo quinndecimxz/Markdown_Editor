@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    padding: 1rem;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    height: 500px;
+}
+
+.editor,
+.preview {
+    flex: 1;
+    min-width: 0;
+    padding: 15px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    overflow-y: auto;
+}
+
+.editor {
+    display: flex;
+    flex-direction: column;
+}
+
+.editor textarea {
+    width: 100%;
+    flex: 1;
+    min-height: 300px;
+    padding: 10px;
+    resize: vertical;
+    font-family: monospace;
+}
+
+.preview {
+    background: #fafafa;
+}
+
+#viewer {
+    min-height: 300px;
+    overflow-wrap: anywhere;
+}
+
+#presentationScreen {
+    min-height: 75vh;
+}
+
+#presentationSlide {
+    min-height: 65vh;
+    padding: 30px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    overflow-wrap: anywhere;
+}
+
+#presentationSlide img,
+#viewer img {
+    max-width: 100%;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+button {
+    padding: 9px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background: #fff;
+    cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+    background: #e8e8e8;
+}
+
+button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+#presentationButton {
+    background: #2459d3;
+    color: white;
+}
+
+#presentationButton:hover {
+    background: #1946ad;
+}
+
+#slideCounter,
+#presentCounter {
+    font-weight: bold;
+}
+
+#saveStatus {
+    font-size: 13px;
+    color: #555;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+#presentationScreen:fullscreen {
+    padding: 20px;
+    overflow-y: auto;
+    background: white;
+}
+
+#presentationScreen:fullscreen #presentationSlide {
+    min-height: calc(100vh - 140px);
+}
+
+#editorScreen:fullscreen {
+    padding: 20px;
+    overflow-y: auto;
+    background: white;
+}
+
+@media (max-width: 700px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .editor,
+    .preview {
+        min-height: 400px;
+    }
+}
