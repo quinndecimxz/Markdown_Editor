@@ -29,12 +29,12 @@ function splitSlides(text) {
   let result = text.split(/^---$/gm).map((slide) => slide.trim());
 
   // Remove empty slides at the beginning or end.
-  while (result.length > 1 && result[0] === "") {
-    result.shift();
-  }
+  // while (result.length > 1 && result[0] === "") {
+  //   result.shift();
+  // }
 
-  while (result.length > 1 && result[result.length - 1] === "") {
-    result.pop();
+  // while (result.length > 1 && result[result.length - 1] === "") {
+  //   result.pop();
   }
 
   return result.length ? result : [""];
